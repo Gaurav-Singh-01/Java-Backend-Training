@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <!--  Constructor Injection  -->
+	<bean id="employeeDemo"
+		class="com.globallogic.spring_core.Employee">
+		<constructor-arg index="0" value="1" />
+		<constructor-arg index="1" value="Gaurav" />
+	</bean>
+
+
+    <!--  Constructor Collection Injection  -->
+	<bean id="employeeCollectionDemo"
+		class="com.globallogic.spring_core.Employee">
+		<constructor-arg index="0" value="1" />
+		<constructor-arg index="1" value="Gaurav" />
+		<constructor-arg index="2">
+			<list>
+				<value>Lucknow</value>
+				<value>Mumbai</value>
+				<value>Indonasia</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg index="3">
+			<list>
+				<value>9876543210</value>
+				<value>9087654908</value>
+				<value>9087564325</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+
+     <!--  Bean Injection  -->
+	<bean id="beanDemo" class="com.globallogic.spring_core.Employee">
+		<property name="id" value="2" />
+		<property name="name" value="Singh" />
+	</bean>
+	
+	
+	<!--  Bean Collection Injection  -->
+	<bean id="beanCollectionDemo" class="com.globallogic.spring_core.Employee">
+		<property name="id" value="2" />
+		<property name="name" value="Singh" />
+		<property name="address">
+			<list>
+				<value>Lucknow</value>
+				<value>Mumbai</value>
+				<value>Indonasia</value>
+			</list>
+		</property>
+		<property name="phone">
+			<list>
+				<value>9876543210</value>
+				<value>9087654908</value>
+				<value>9087564325</value>
+			</list>
+		</property>
+	</bean>
+
+
+</beans>

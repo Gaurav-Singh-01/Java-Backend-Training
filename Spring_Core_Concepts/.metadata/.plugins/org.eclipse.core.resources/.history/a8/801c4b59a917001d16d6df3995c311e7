@@ -1,0 +1,10 @@
+package com.globallogic.spring_core;
+
+public class EmployeeDIDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
