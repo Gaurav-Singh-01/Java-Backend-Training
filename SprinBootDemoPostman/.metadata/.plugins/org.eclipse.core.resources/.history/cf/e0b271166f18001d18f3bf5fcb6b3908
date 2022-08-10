@@ -1,0 +1,5 @@
+package com.globallogic.demojpa.controller;
+
+public class HomeController {
+
+}
