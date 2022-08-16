@@ -57,6 +57,7 @@ public class ProductController {
 
 //  4- As Super Admin should be able to view by category and their product
 //	9- Make use of java 8 lambda and stream API for filter
+//  give category id  --> returns list of product name	
 	@GetMapping("/prodList/{id}")
 	public List<String> showProductByCategoryId(@PathVariable("id") int id) {
 
@@ -76,6 +77,7 @@ public class ProductController {
 
 //  4- As Super Admin should be able to view by category and their product
 //	9- Make use of java 8 lambda and stream API for filter
+//  give category name  --> returns list of product name	
 	@GetMapping("/prod/{name}")
 	public List<String> showProductByCategoryName(@PathVariable("name") String cName) {
 
@@ -95,6 +97,7 @@ public class ProductController {
 
 //  4- As Super Admin should be able to view by category and their product
 //	9- Make use of java 8 lambda and stream API for filter
+//  give category name  --> returns list of product with all attributes	
 	@GetMapping("/fullprod/{name}")
 	public List<Product> showFullProductByCategoryName(@PathVariable("name") String cName) {
 
@@ -111,6 +114,7 @@ public class ProductController {
 
 //  5- As Super Admin should be able to search the product by name and category name
 //	9- Make use of java 8 lambda and stream API for filter
+//  give category name and product name  --> returns list of product with all attributes			
 	@GetMapping("/search/{cName}/{pName}")
 	public List<Product> searchProduct(@PathVariable("cName") String cName, @PathVariable("pName") String pName) {
 
@@ -129,6 +133,7 @@ public class ProductController {
 
 //  7- As super Admin should be able to search the merchant by name and location
 //	9- Make use of java 8 lambda and stream API for filter
+//  give merchant name and location   --> returns list of merchant name		
 	@GetMapping("/searchmerchant/{mName}/{mLocation}")
 	public List<String> searchMerchant(@PathVariable("mName") String mName,
 			@PathVariable("mLocation") String mLocation) {
