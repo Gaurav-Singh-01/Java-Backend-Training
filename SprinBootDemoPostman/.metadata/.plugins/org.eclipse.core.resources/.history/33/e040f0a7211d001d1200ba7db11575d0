@@ -1,0 +1,5 @@
+package com.assignments.Ecommerce.entity;
+
+public class Merchant {
+
+}

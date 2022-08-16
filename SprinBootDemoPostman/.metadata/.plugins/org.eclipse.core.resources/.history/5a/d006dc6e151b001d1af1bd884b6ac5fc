@@ -1,0 +1,5 @@
+package com.globallogic.demojpaonetoone.controller;
+
+public class DepartmentController {
+
+}

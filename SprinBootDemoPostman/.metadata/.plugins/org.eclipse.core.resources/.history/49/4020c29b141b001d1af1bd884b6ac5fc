@@ -1,0 +1,5 @@
+package com.globallogic.demojpaonetoone.repo;
+
+public interface EmployeeRepo {
+
+}

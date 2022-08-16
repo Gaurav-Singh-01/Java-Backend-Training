@@ -1,0 +1,5 @@
+package com.assignments.Ecommerce.repository;
+
+public interface CategoryRepo {
+
+}

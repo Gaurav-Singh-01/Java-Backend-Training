@@ -1,0 +1,33 @@
+package com.assignments.Ecommerce.entity;
+
+import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Table(name = "product")
+public class Product {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
+	
+	@Column
+	String name;
+	
+	@Column
+	String color;
+	
+	@Column
+	double price;
+	
+	@OneToMany
+	Category category;
+	
+	@OneToMany
+	Merchant merchant;
+	
+	
+
+}
