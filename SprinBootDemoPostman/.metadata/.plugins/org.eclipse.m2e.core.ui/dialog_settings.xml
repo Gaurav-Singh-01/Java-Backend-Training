@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\SpringBootDemo\Ecommerce"/>
 			<item value="D:\SpringBootDemo\demojpaonetoone"/>
 			<item value="D:\SpringBootDemo\demojpa"/>
 			<item value="D:\SpringBootDemo"/>
