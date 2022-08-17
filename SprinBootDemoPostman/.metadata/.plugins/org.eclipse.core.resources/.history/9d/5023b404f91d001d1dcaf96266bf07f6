@@ -1,0 +1,66 @@
+package com.globallogic.allmappings.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.globallogic.allmappings.entity.Address;
+import com.globallogic.allmappings.repositories.AddressRepo;
+
+
+
+
+
+
+@RestController
+@RequestMapping("/address")
+public class AddressController {
+	
+	@Autowired
+	AddressRepo repo;
+	
+	
+	@GetMapping("/")
+	public List<Address> showDetails() {
+		
+		return repo.findAll();
+	}
+
+	@PostMapping("/")
+	public List<Address> addEmployee(@RequestBody Address add) {
+		
+		repo.save(add);
+		System.out.println("Data Added Successfully");
+		return repo.findAll();
+				
+		
+	}
+	
+	@PutMapping("/")
+	public List<Address> updateEmployee(@RequestBody Address add) {
+		repo.save(add);
+		System.out.println("Data updated Successfully");
+		return repo.findAll();
+		
+	}
+	
+	@DeleteMapping("/{id}")
+	public List<Address> deleteEmployee(@PathVariable("id") long id) {
+		
+		System.err.println("Deleted id is "+id);
+		repo.deleteById(id);
+		return repo.findAll();
+	}
+	
+	
+	
+	
+}

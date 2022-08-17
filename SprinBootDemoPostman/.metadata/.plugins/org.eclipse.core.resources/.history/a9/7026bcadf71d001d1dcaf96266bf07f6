@@ -1,0 +1,5 @@
+package com.globallogic.allmappings.repositories;
+
+public interface StudentRepo {
+
+}

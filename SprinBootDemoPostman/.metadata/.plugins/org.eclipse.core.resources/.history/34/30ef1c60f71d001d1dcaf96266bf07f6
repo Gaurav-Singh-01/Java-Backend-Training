@@ -1,0 +1,31 @@
+package com.globallogic.allmappings.entity;
+
+import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "student")
+public class Student {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	long id;
+	
+	@Column
+	String name;
+	
+	@Column
+	String city;
+	
+	//ONE TO ONE MAPPING WITH REGISTER TABLE
+	@OneToOne
+	Register register;
+	
+	
+	
+	
+
+}
