@@ -1,0 +1,21 @@
+package com.globallogic.jpagenerationtype.serviceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.globallogic.jpagenerationtype.entity.EmployeeDemo;
+import com.globallogic.jpagenerationtype.repo.EmployeeDemoRepo;
+import com.globallogic.jpagenerationtype.service.EmployeeService;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	
+	@Autowired
+	EmployeeDemoRepo repo;
+
+	@Override
+	public String addEmployee(EmployeeDemo emp) {
+		
+		repo.save(emp);
+		return "Data Added Successfully";
+	}
+
+}

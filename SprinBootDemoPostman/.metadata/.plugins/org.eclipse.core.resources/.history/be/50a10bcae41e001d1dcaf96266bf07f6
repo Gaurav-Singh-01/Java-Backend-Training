@@ -1,0 +1,14 @@
+package com.globallogic.jpagenerationtype.serviceImpl;
+
+import com.globallogic.jpagenerationtype.entity.EmployeeDemo;
+import com.globallogic.jpagenerationtype.service.EmployeeService;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Override
+	public void addEmployee(EmployeeDemo emp) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.globallogic.jpagenerationtype.repo;
+
+public class EmployeeTableRepo {
+
+}

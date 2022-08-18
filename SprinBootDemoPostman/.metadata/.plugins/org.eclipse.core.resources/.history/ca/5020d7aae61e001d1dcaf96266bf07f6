@@ -1,0 +1,62 @@
+package com.globallogic.jpagenerationtype.entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="employee")
+public class EmployeeDemo {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	long id;
+	
+	@Column(name="name")
+	String sname;
+	
+	@Column(name="salary")
+	double ssalary;
+
+	public EmployeeDemo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public EmployeeDemo(long id, String sname, double ssalary) {
+		super();
+		this.id = id;
+		this.sname = sname;
+		this.ssalary = ssalary;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getsname() {
+		return sname;
+	}
+
+	public void setsname(String sname) {
+		this.sname = sname;
+	}
+
+	public double getssalary() {
+		return ssalary;
+	}
+
+	public void setssalary(double ssalary) {
+		this.ssalary = ssalary;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeDemo [id=" + id + ", sname=" + sname + ", ssalary=" + ssalary + "]";
+	}
+	
+	
+
+}

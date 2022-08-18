@@ -1,0 +1,9 @@
+package com.globallogic.jpagenerationtype.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.globallogic.jpagenerationtype.entity.EmployeeDemo;
+
+public interface EmployeeDemoRepo extends JpaRepository<EmployeeDemo, Long> {
+
+}

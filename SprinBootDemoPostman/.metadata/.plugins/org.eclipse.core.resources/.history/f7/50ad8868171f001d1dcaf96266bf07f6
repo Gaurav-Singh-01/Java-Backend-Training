@@ -1,0 +1,58 @@
+package com.globallogic.jpagenerationtype.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.globallogic.jpagenerationtype.entity.EmployeeDemo;
+
+public interface EmployeeDemoRepo extends JpaRepository<EmployeeDemo, Long> {
+
+	// find the all the matching records
+	public List<EmployeeDemo> findBySname(String name);
+
+//	// all the matching
+//	public List<EmployeeDemo> findBySsalary(double salary);
+//
+//	// find first with limit
+//	public List<EmployeeDemo> findFirst1BySname(String name);
+//
+//	// matching with and salary and name
+//	public List<EmployeeDemo> findBySsalaryAndSname(double salary, String name);
+//
+//	// find the lessThan Salary
+//	public List<EmployeeDemo> findBySalaryLessThan(double salary);
+//
+//	// find the greater than Salary
+//	public List<EmployeeDemo> findBySalaryGreaterThan(double salary);
+//
+//	// find all the match with like
+//	public List<EmployeeDemo> findByNameLike(String name);
+//
+//	// find all the match with name with ignore case
+//	public List<EmployeeDemo> findByNameContainingIgnoreCase(String name);
+//
+//	// find all the match with like
+//	// where name!='kumar'
+//	public List<EmployeeDemo> findByNameNot(String name);
+//
+//	// find the salary between range
+//	public List<EmployeeDemo> findBySalaryBetween(double start, double end);
+//
+//	// find the salary in given list
+//	public List<EmployeeDemo> findBySalaryIn(List<Double> ls);
+//
+//	// find the all the matching records
+//	@Query("Select e from EmployeeDemo e where e.sname=?1")
+//	public List<EmployeeDemo> getEmployee(String name);
+//
+//	// find the all the matching records
+//	@Query("Select e from EmployeeDemo e where e.sname=:name")
+//	public List<EmployeeDemo> getEmployeeByName(String name);
+//
+//	// find the all the matching records
+//	@Query("Select e from EmployeeDemo e where e.sname=:name and e.ssalary=:salary")
+//	public List<EmployeeDemo> getEmployeeByNameAndSalary(String name, double salary);
+
+}

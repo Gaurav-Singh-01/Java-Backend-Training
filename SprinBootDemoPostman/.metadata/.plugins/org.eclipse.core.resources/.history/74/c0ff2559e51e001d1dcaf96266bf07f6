@@ -1,0 +1,11 @@
+package com.globallogic.jpagenerationtype.service;
+
+import org.springframework.stereotype.Component;
+
+import com.globallogic.jpagenerationtype.entity.EmployeeDemo;
+
+@Component
+public interface EmployeeService {
+
+	public String addEmployee(EmployeeDemo emp);
+}

@@ -1,0 +1,8 @@
+package com.globallogic.jpagenerationtype.service;
+
+import com.globallogic.jpagenerationtype.entity.EmployeeDemo;
+
+public interface EmployeeService {
+
+	public void addEmployee(EmployeeDemo emp);
+}

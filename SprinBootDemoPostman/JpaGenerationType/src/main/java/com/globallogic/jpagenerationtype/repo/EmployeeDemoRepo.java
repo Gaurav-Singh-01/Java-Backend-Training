@@ -1,0 +1,61 @@
+package com.globallogic.jpagenerationtype.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.globallogic.jpagenerationtype.entity.EmployeeDemo;
+
+public interface EmployeeDemoRepo extends JpaRepository<EmployeeDemo, Long> {
+
+	
+	/* ------------------------ CUSTOM MAPPING ---------------------------------*/
+	
+	// find the all the matching records
+	public List<EmployeeDemo> findBySname(String name);
+
+	// all the matching
+	public List<EmployeeDemo> findBySsalary(double salary);
+
+	// find first with limit
+	public List<EmployeeDemo> findFirst1BySname(String name);
+
+	// matching with and salary and name
+	public List<EmployeeDemo> findBySsalaryAndSname(double salary, String name);
+
+	// find the lessThan Salary
+	public List<EmployeeDemo> findBySsalaryLessThan(double salary);
+
+	// find the greater than Salary
+	public List<EmployeeDemo> findBySsalaryGreaterThan(double salary);
+
+	// find all the match with like
+	public List<EmployeeDemo> findBySnameLike(String name);
+
+	// find all the match with name with ignore case
+	public List<EmployeeDemo> findBySnameContainingIgnoreCase(String name);
+
+	// find all the match with like
+	// where name!='kumar'
+	public List<EmployeeDemo> findBySnameNot(String name);
+
+	// find the salary between range
+	public List<EmployeeDemo> findBySsalaryBetween(double start, double end);
+
+	// find the salary in given list
+	public List<EmployeeDemo> findBySsalaryIn(List<Double> ls);
+
+	// find the all the matching records
+	@Query("Select e from EmployeeDemo e where e.sname=?1")
+	public List<EmployeeDemo> getEmployee(String name);
+
+	// find the all the matching records
+	@Query("Select e from EmployeeDemo e where e.sname=:name")
+	public List<EmployeeDemo> getEmployeeBySname(String name);
+
+	// find the all the matching records
+	@Query("Select e from EmployeeDemo e where e.sname=:name and e.ssalary=:salary")
+	public List<EmployeeDemo> getEmployeeBySnameAndSsalary(String name, double salary);
+
+}
