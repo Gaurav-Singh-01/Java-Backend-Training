@@ -1,0 +1,41 @@
+package com.globallogic.User.serviceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.globallogic.User.entity.User;
+import com.globallogic.User.entity.User;
+import com.globallogic.User.repository.UserRepo;
+import com.globallogic.User.services.UserService;
+
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	UserRepo repoUser;
+	
+	@Override
+	public List<User> showDetails() {
+		// TODO Auto-generated method stub
+		return repoUser.findAll();
+	}
+
+	@Override
+	public List<User> addUser(User User) {
+		repoUser.save(User);
+		return repoUser.findAll();
+	}
+
+	@Override
+	public String updateUser(User User) {
+		repoUser.save(User);
+		return "User updated successfully";
+	}
+
+	@Override
+	public String delete(int id) {
+		repoUser.deleteById(id);
+		return "User Deleted Successfully";
+	}
+
+}

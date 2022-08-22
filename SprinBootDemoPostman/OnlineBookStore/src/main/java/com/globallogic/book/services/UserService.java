@@ -1,0 +1,26 @@
+package com.globallogic.book.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.globallogic.book.entity.User;
+
+
+@Component
+public interface UserService {
+	
+	//GET
+		public List<User> showDetails();
+		
+		//POST
+		public  List<User> addUser(User user);
+		
+		//PUT
+		public String updateUser(User user);
+		
+		//DELETE
+		public String delete(int id);
+	
+
+}

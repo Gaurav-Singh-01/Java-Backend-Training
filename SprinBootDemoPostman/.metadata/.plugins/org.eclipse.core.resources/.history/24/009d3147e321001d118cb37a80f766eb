@@ -1,0 +1,24 @@
+package com.globallogic.book.entity;
+
+import java.util.List;
+
+import javax.persistence.*;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="admin")
+public class Admin {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	String id;
+	
+	@OneToOne
+	SignUp signUp;
+	
+	@OneToMany(cascade = CascadeType.PERSIST)
+	List<Book> book;
+	
+	
+
+}

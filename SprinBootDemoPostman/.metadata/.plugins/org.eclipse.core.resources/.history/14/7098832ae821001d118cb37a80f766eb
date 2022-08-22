@@ -1,0 +1,12 @@
+package com.globallogic.book.services;
+
+import org.springframework.stereotype.Component;
+
+import com.globallogic.book.entity.SignUp;
+
+@Component
+public interface SignupService {
+	
+	public void signup(SignUp signUp);
+
+}

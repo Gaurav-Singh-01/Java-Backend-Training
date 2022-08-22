@@ -1,0 +1,67 @@
+package com.globallogic.book.entity;
+
+import java.util.List;
+
+import javax.persistence.*;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="admin")
+public class Admin {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	SignUp signUp;
+	
+	@ManyToMany(cascade = CascadeType.PERSIST)
+	List<Book> book;
+
+	public Admin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Admin(int id, SignUp signUp, List<Book> book) {
+		super();
+		this.id = id;
+		this.signUp = signUp;
+		this.book = book;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public SignUp getSignUp() {
+		return signUp;
+	}
+
+	public void setSignUp(SignUp signUp) {
+		this.signUp = signUp;
+	}
+
+	public List<Book> getBook() {
+		return book;
+	}
+
+	public void setBook(List<Book> book) {
+		this.book = book;
+	}
+
+	@Override
+	public String toString() {
+		return "Admin [id=" + id + ", signUp=" + signUp + ", book=" + book + "]";
+	}
+	
+	
+	
+	
+
+}

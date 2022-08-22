@@ -1,0 +1,26 @@
+package com.globallogic.book.serviceImpl;
+
+import com.globallogic.book.entity.Admin;
+import com.globallogic.book.services.AdminService;
+
+public class AdminServiceImpl implements AdminService {
+
+	@Override
+	public String addBook(Admin admin) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String updateBook(Admin admin) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

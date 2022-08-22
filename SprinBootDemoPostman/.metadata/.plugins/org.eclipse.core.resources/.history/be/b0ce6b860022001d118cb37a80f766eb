@@ -1,0 +1,26 @@
+package com.globallogic.book.serviceImpl;
+
+import com.globallogic.book.entity.Book;
+import com.globallogic.book.services.BookService;
+
+public class BookServiceImpl implements BookService {
+
+	@Override
+	public String addBook(Book book) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String updateBook(Book book) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

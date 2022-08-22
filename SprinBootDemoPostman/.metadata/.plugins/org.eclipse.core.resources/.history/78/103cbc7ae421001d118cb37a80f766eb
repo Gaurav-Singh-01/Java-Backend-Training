@@ -1,0 +1,32 @@
+package com.globallogic.book.entity;
+
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="user")
+public class User {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	String id;
+	
+	@Column
+	String name;
+	
+	@Column
+	String address;
+	
+	@Column
+	long phoneNo;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	SignUp signup;
+	
+	@ManyToMany(cascade = CascadeType.PERSIST)
+	List<Book> book;
+	
+	
+
+}
