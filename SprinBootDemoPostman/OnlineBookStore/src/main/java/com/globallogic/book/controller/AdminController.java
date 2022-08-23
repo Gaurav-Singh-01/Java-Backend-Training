@@ -46,9 +46,9 @@ public class AdminController {
 	}
 
 	// CHECK LOGIN SECOND WAY
-	@GetMapping("/log/email/{email}/password/{password}")
-	public String loginAdminSecondWay(@PathVariable("email") String email, @PathVariable("password") String password) {
-		return service.loginSecondWay(email, password);
+	@GetMapping("/log/userid/{userid}/password/{password}")
+	public String loginAdminSecondWay(@PathVariable("userid") String userId, @PathVariable("password") String password) {
+		return service.loginSecondWay(userId, password);
 	}
 
 

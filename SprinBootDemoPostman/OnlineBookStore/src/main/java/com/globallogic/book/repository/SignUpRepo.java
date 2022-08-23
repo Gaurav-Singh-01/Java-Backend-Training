@@ -2,6 +2,8 @@ package com.globallogic.book.repository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -11,7 +13,7 @@ import com.globallogic.book.entity.SignUp;
 
 public interface SignUpRepo extends JpaRepository<SignUp, Integer> {
 
-	public List<SignUp> findByEmailAndPasswordAndType(String email, String password, String type);
+	public List<SignUp> findByUserIdAndPasswordAndType(String userId, String password, String type);
 
 //
 //	@Modifying
@@ -20,6 +22,7 @@ public interface SignUpRepo extends JpaRepository<SignUp, Integer> {
 	
 	
 	@Modifying
+	@Transactional
 	@Query("update SignUp s set s.password = :password where s.id = :id")
 	public void setPasswordForSignup(String password,int id);
 

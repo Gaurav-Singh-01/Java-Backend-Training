@@ -80,8 +80,8 @@ public class UserServiceImpl implements UserService {
 	
 	//CHECK LOGIN THROUGH URL
 	@Override
-	public String login(String email, String password) {
-		List<SignUp> signList = signRepo.findByEmailAndPasswordAndType(email,password,"USER");		
+	public String login(String userId, String password) {
+		List<SignUp> signList = signRepo.findByUserIdAndPasswordAndType(userId,password,"USER");		
 		if(!signList.isEmpty()) {
 			return "LOGIN SUCCESSFULLY";
 		}

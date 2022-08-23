@@ -17,7 +17,7 @@ public interface AdminService {
 	public List<Admin> details();
 	
 	//get login
-	public String loginSecondWay(String email,String password);
+	public String loginSecondWay(String userId,String password);
 	
 	//POST admin details
 	public List<Admin> addAdmin(Admin admin);

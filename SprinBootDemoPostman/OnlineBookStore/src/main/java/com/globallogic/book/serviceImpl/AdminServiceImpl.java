@@ -44,7 +44,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public String login(Admin admin) {
 		
-		List<SignUp> signList = signRepo.findByEmailAndPasswordAndType(admin.getSignUp().getEmail(),
+		List<SignUp> signList = signRepo.findByUserIdAndPasswordAndType(admin.getSignUp().getUserId(),
 				admin.getSignUp().getPassword(),admin.getSignUp().getType());		
 		if(!signList.isEmpty()) {
 			return "LOGIN SUCCESSFULLY";
@@ -53,9 +53,9 @@ public class AdminServiceImpl implements AdminService {
 	}
 	
 	//ADMIN LOGIN SECONDWAY
-	public String loginSecondWay(String email, String password) {
+	public String loginSecondWay(String userId, String password) {
 		
-		List<SignUp> signList = signRepo.findByEmailAndPasswordAndType(email,password,"ADMIN");		
+		List<SignUp> signList = signRepo.findByUserIdAndPasswordAndType(userId,password,"ADMIN");		
 		if(!signList.isEmpty()) {
 			return "LOGIN SUCCESSFULLY";
 		}

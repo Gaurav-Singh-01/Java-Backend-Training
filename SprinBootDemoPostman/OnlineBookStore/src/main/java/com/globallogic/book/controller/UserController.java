@@ -56,9 +56,9 @@ public class UserController {
 	}
 
 	// CHECK LOGIN 
-	@GetMapping("/log/email/{email}/password/{password}")
-	public String loginUser(@PathVariable("email") String email, @PathVariable("password") String password) {
-		return service.login(email, password);
+	@GetMapping("/log/userid/{userid}/password/{password}")
+	public String loginUser(@PathVariable("userid") String userId, @PathVariable("password") String password) {
+		return service.login(userId, password);
 	}
 
 	// SEARCH BOOK BY ID
