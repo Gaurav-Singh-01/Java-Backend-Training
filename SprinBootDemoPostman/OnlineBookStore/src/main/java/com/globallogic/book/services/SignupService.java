@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import com.globallogic.book.entity.SignUp;
 
 @Component
-public interface SignupService {
+public interface SignUpService {
 	
 	//GET
 	public List<SignUp> showDetails();

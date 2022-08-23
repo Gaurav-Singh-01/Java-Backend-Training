@@ -17,6 +17,9 @@ public class SignUp {
 	String email;
 	
 	@Column
+	String userId;
+	
+	@Column
 	String password;
 	
 	@Column
@@ -27,13 +30,15 @@ public class SignUp {
 		// TODO Auto-generated constructor stub
 	}
 
-	public SignUp(int id, String email, String password, String type) {
+	public SignUp(int id, String email, String userId, String password, String type) {
 		super();
 		this.id = id;
 		this.email = email;
+		this.userId = userId;
 		this.password = password;
 		this.type = type;
 	}
+
 
 	public int getId() {
 		return id;
@@ -67,10 +72,22 @@ public class SignUp {
 		this.type = type;
 	}
 
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	@Override
 	public String toString() {
-		return "SignUp [id=" + id + ", email=" + email + ", password=" + password + ", type=" + type + "]";
+		return "SignUp [id=" + id + ", email=" + email + ", userId=" + userId + ", password=" + password + ", type="
+				+ type + "]";
 	}
+	
+
+	
 
 	
 

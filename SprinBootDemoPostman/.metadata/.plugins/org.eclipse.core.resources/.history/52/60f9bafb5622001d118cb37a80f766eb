@@ -1,0 +1,22 @@
+package com.globallogic.book.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.globallogic.book.entity.SignUp;
+
+public interface SignUpRepo extends JpaRepository<SignUp, Integer> {
+
+	public List<SignUp> findByEmailAndPasswordAndType(String email, String password, String type);
+
+	// find the all the matching records
+	@Query("Update signup set password =:newPassword where signup.id=:id")
+	public boolean setForgetPassword(String newPassword, int id);
+	
+	// find the all the matching records
+//		@Query("Select e from EmployeeDemo e where e.sname=:name and e.ssalary=:salary")
+//		public List<EmployeeDemo> getEmployeeBySnameAndSsalary(String name, double salary);
+
+}

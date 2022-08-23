@@ -25,31 +25,35 @@ public class Admin {
 	@OneToOne(cascade = CascadeType.PERSIST)
 	SignUp signUp;
 	
-	@ManyToMany(cascade = CascadeType.PERSIST)
-	List<Book> book;
 
 	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	
 
 	public Admin(SignUp signUp) {
 		super();
 		this.signUp = signUp;
 	}
+	
+	
+	
+	public Admin(int id, SignUp signUp) {
+		super();
+		this.id = id;
+		this.signUp = signUp;
+	}
 
 
 
-	public Admin(int id, String name, String address, long phoneNo, SignUp signUp, List<Book> book) {
+	public Admin(int id, String name, String address, long phoneNo, SignUp signUp) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.phoneNo = phoneNo;
 		this.signUp = signUp;
-		this.book = book;
 	}
 
 	public int getId() {
@@ -92,18 +96,11 @@ public class Admin {
 		this.signUp = signUp;
 	}
 
-	public List<Book> getBook() {
-		return book;
-	}
-
-	public void setBook(List<Book> book) {
-		this.book = book;
-	}
 
 	@Override
 	public String toString() {
 		return "Admin [id=" + id + ", name=" + name + ", address=" + address + ", phoneNo=" + phoneNo + ", signUp="
-				+ signUp + ", book=" + book + "]";
+				+ signUp + "]";
 	}
 
 }

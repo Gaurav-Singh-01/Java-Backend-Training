@@ -4,14 +4,21 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.globallogic.book.entity.Book;
 import com.globallogic.book.entity.User;
 
 
 @Component
 public interface UserService {
 	
-	//GET
+	    //GET
 		public List<User> showDetails();
+		
+		//get login
+		public String login(String email,String password);
+		
+		//forgetPassword   //GET
+		public String forgetPassword(int id,String newPassword);
 		
 		//POST
 		public  List<User> addUser(User user);
@@ -21,6 +28,15 @@ public interface UserService {
 		
 		//DELETE
 		public String delete(int id);
+		
+		//SEARCH BOOK BY ID
+		public Book searchBookById(int id);
+		
+		//SEARCH BOOK BY NAME
+		public Book searchBookByName(String name);
+		
+		//SEARCH BOOK BY AUTHOR NAME
+		public List<Book> searchBookByAuthor(String name);
 	
 
 }

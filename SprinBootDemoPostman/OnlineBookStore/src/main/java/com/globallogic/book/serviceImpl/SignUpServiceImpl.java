@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 
 import com.globallogic.book.entity.SignUp;
 import com.globallogic.book.repository.SignUpRepo;
-import com.globallogic.book.services.SignupService;
+import com.globallogic.book.services.SignUpService;
 
 @Component
-public class SignUpServiceImpl implements SignupService {
+public class SignUpServiceImpl implements SignUpService {
 	
 	@Autowired
 	SignUpRepo signRepo;

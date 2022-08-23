@@ -1,0 +1,13 @@
+package com.globallogic.book.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.globallogic.book.entity.SignUp;
+
+public interface SignUpRepo extends JpaRepository<SignUp, Integer> {
+	
+	public List<SignUp> findByEmailAndPasswordAndType(String email,String password,String type);
+
+}

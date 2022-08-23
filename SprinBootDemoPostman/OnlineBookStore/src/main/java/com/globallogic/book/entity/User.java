@@ -22,20 +22,20 @@ public class User {
 	long phoneNo;
 	
 	@OneToOne(cascade = CascadeType.PERSIST)
-	SignUp signup;
+	SignUp signUp;
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(int id, String name, String address, long phoneNo, SignUp signup) {
+	public User(int id, String name, String address, long phoneNo, SignUp signUp) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.phoneNo = phoneNo;
-		this.signup = signup;
+		this.signUp = signUp;
 	}
 
 	public int getId() {
@@ -70,26 +70,20 @@ public class User {
 		this.phoneNo = phoneNo;
 	}
 
-	public SignUp getSignup() {
-		return signup;
+	public SignUp getSignUp() {
+		return signUp;
 	}
 
-	public void setSignup(SignUp signup) {
-		this.signup = signup;
+	public void setSignUp(SignUp signUp) {
+		this.signUp = signUp;
 	}
 
 
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", address=" + address + ", phoneNo=" + phoneNo + ", signup="
-				+ signup + "]";
+		return "User [id=" + id + ", name=" + name + ", address=" + address + ", phoneNo=" + phoneNo + ", signUp="
+				+ signUp + "]";
 	}
 	
-	
-	
-	
-	
-	
-
 }

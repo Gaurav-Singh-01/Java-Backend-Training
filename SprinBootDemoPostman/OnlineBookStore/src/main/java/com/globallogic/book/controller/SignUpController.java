@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.globallogic.book.entity.SignUp;
-import com.globallogic.book.services.SignupService;
+import com.globallogic.book.services.SignUpService;
 
 @RestController
 @RequestMapping("/signup")
 public class SignUpController {
 	
 	@Autowired
-	SignupService service;
+	SignUpService service;
 	
 	@GetMapping("/")
 	public List<SignUp> show(){
