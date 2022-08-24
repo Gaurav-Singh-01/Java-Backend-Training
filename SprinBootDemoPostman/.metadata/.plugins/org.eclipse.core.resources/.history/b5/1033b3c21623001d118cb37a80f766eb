@@ -1,0 +1,93 @@
+package com.globallogic.book.entity;
+
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="order")
+public class Order {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	long id;
+	
+	@Column
+	String userId;
+	
+	@Column
+	String bookId;
+	
+	@Column
+	String shippingAddress;
+	
+	
+	
+	
+
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+	public Order(long id, String userId, String bookId, String shippingAddress) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.bookId = bookId;
+		this.shippingAddress = shippingAddress;
+	}
+
+
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	
+
+	public String getBookId() {
+		return bookId;
+	}
+
+
+
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
+	}
+
+
+
+	public String getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(String shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", userId=" + userId + ", bookId=" + bookId + ", shippingAddress=" + shippingAddress
+				+ "]";
+	}
+
+	
+
+}

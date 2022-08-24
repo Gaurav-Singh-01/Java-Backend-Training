@@ -1,0 +1,9 @@
+package com.globallogic.book.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.globallogic.book.entity.Order;
+
+public interface OrderRepo extends JpaRepository<Order, Integer> {
+	
+}

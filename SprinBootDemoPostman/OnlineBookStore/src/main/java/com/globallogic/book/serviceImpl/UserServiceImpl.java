@@ -2,14 +2,19 @@ package com.globallogic.book.serviceImpl;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.globallogic.book.email.EmailSenderService;
 import com.globallogic.book.entity.Admin;
 import com.globallogic.book.entity.Book;
+import com.globallogic.book.entity.Order;
 import com.globallogic.book.entity.SignUp;
 import com.globallogic.book.entity.User;
 import com.globallogic.book.repository.BookRepo;
+import com.globallogic.book.repository.OrderRepo;
 import com.globallogic.book.repository.SignUpRepo;
 import com.globallogic.book.repository.UserRepo;
 import com.globallogic.book.services.UserService;
@@ -25,6 +30,12 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	SignUpRepo signRepo;
+	
+	@Autowired
+	OrderRepo repoOrder;
+	
+	@Autowired
+	EmailSenderService email;
 	
 	//SHOW USER DETAILS
 	@Override
@@ -101,6 +112,34 @@ public class UserServiceImpl implements UserService {
 		signRepo.setPasswordForSignup(newPassword, checkid);
 
 		return "Password Set Successfully";
+	}
+
+	
+	//BUY BOOK AND SEND MAIL
+	@Override
+	public String buyBook(String userId, int bookId, String address) throws MessagingException {
+		
+		Order o = new Order();
+		o.setIdUser(userId);
+		o.setIdBook(bookId);
+		o.setShippingAddress(address);
+		repoOrder.save(o);
+		
+		//Changing status of book to sold
+		repoBook.setStatusForBook("SOLD", bookId);
+		
+		//sending mail
+		email.sendSimpleEmail("bamerendra@gmail.com",
+				"Order Placed Successfully",
+				"Order Placed");
+		
+		return "ORDER PLACED SUCCESSFULLY";
+	}
+
+	//VIEW ORDER HISTORY
+	@Override
+	public List<Order> viewHistory(String userId) {
+		return repoOrder.getOrderByIdUser(userId);
 	}
 
 }

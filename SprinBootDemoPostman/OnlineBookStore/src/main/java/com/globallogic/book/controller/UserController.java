@@ -2,6 +2,8 @@ package com.globallogic.book.controller;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.globallogic.book.entity.Book;
+import com.globallogic.book.entity.Order;
 import com.globallogic.book.entity.User;
 import com.globallogic.book.services.UserService;
 
@@ -55,7 +58,7 @@ public class UserController {
 		return service.forgetPassword(id, password);
 	}
 
-	// CHECK LOGIN 
+	// CHECK LOGIN
 	@GetMapping("/log/userid/{userid}/password/{password}")
 	public String loginUser(@PathVariable("userid") String userId, @PathVariable("password") String password) {
 		return service.login(userId, password);
@@ -77,5 +80,20 @@ public class UserController {
 	@GetMapping("/searchbookbyauthor/name/{name}")
 	public List<Book> searchByAuthor(@PathVariable("name") String name) {
 		return service.searchBookByAuthor(name);
+	}
+
+	// ORDER BOOK AND SEND MAIL
+	@GetMapping("/buybook/userid/{userid}/bookid/{bookid}/address/{address}")
+	public String buyBook(@PathVariable("userid") String userId, @PathVariable("bookid") int bookId,
+			@PathVariable("address") String address) throws MessagingException{
+
+		return service.buyBook(userId, bookId, address);
+	}
+
+	// VIEW ORDER HISTORY
+	@GetMapping("/history/userid/{userid}")
+	public List<Order> viewHistory(@PathVariable("userid") String userId) {
+
+		return service.viewHistory(userId);
 	}
 }

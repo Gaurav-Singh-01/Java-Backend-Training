@@ -1,0 +1,6 @@
+package com.globallogic.book.services;
+
+@Component
+public interface OrderService {
+
+}

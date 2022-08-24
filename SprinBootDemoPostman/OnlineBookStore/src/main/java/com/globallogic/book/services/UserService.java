@@ -2,9 +2,12 @@ package com.globallogic.book.services;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
+
 import org.springframework.stereotype.Component;
 
 import com.globallogic.book.entity.Book;
+import com.globallogic.book.entity.Order;
 import com.globallogic.book.entity.User;
 
 
@@ -37,6 +40,13 @@ public interface UserService {
 		
 		//SEARCH BOOK BY AUTHOR NAME
 		public List<Book> searchBookByAuthor(String name);
+		
+		
+		//BUY BOOK AND SEND MAIL
+		public String buyBook(String userId,int bookId,String address) throws MessagingException;
+		
+		//VIEW ORDER HISTORY
+		public List<Order> viewHistory(String userId);
 	
 
 }
