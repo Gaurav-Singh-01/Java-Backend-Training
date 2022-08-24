@@ -140,7 +140,7 @@ public class UserServiceImpl implements UserService {
 //					"Order Placed Successfully",
 //					"Order Placed");
 //		
-		return "ORDER PLACED SUCCESSFULLY";
+//		return "ORDER PLACED SUCCESSFULLY";
 	}
 
 	//VIEW ORDER HISTORY

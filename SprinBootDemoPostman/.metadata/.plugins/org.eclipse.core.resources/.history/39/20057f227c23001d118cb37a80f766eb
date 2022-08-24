@@ -139,7 +139,7 @@ public class UserServiceImpl implements UserService {
 //		 email.sendSimpleEmail(emails,           
 //					"Order Placed Successfully",
 //					"Order Placed");
-//		
+		
 		return "ORDER PLACED SUCCESSFULLY";
 	}
 
