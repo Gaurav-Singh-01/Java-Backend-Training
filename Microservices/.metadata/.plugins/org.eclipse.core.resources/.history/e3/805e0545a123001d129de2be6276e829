@@ -1,0 +1,34 @@
+package com.globallogic.employee.servicesImpl;
+
+import java.util.List;
+
+import com.globallogic.employee.entity.EmployeeEntity;
+import com.globallogic.employee.services.EmployeeEntityService;
+
+public class EmployeeEntityServiceImpl implements EmployeeEntityService {
+
+	@Override
+	public List<EmployeeEntity> showEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EmployeeEntity> addEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EmployeeEntity> updateEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EmployeeEntity> deleteEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

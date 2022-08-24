@@ -1,0 +1,22 @@
+package com.globallogic.employee.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.globallogic.employee.entity.EmployeeEntity;
+
+
+@Service
+public interface EmployeeEntityService {
+	
+	
+	public List<EmployeeEntity> showEmployees();
+	
+	public List<EmployeeEntity> addEmployees(EmployeeEntity emp);
+	
+	public List<EmployeeEntity> updateEmployees(EmployeeEntity emp);
+	
+	public List<EmployeeEntity> deleteEmployees(int id);
+
+}

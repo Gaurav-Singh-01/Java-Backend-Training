@@ -1,0 +1,34 @@
+package com.globallogic.department.servicesImpl;
+
+import java.util.List;
+
+import com.globallogic.department.entity.DepartmentEntity;
+import com.globallogic.department.services.DepartmentEntityService;
+
+public class DepartmentEntityServiceImpl implements DepartmentEntityService {
+
+	@Override
+	public List<DepartmentEntity> showEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<DepartmentEntity> addEmployees(DepartmentEntity dep) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<DepartmentEntity> updateEmployees(DepartmentEntity dep) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<DepartmentEntity> deleteEmployees(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

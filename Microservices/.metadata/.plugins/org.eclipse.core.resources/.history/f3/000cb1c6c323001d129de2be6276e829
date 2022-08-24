@@ -1,0 +1,5 @@
+package com.globallogic.department.controller;
+
+public class DepartmentEntityController {
+
+}

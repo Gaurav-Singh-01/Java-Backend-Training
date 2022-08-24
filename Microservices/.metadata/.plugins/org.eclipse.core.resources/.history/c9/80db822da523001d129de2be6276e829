@@ -1,0 +1,21 @@
+package com.globallogic.department.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.globallogic.department.entity.DepartmentEntity;
+
+
+@Service
+public interface DepartmentEntityService {
+	
+public List<DepartmentEntity> showEmployees();
+	
+	public List<DepartmentEntity> addEmployees(DepartmentEntity emp);
+	
+	public List<DepartmentEntity> updateEmployees(DepartmentEntity emp);
+	
+	public List<DepartmentEntity> deleteEmployees(long id);
+
+}

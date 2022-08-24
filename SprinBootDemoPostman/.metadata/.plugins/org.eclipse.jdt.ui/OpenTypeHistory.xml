@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=demojpa/C:\/Users\/gaurav.k.singh\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.7.2\/spring-data-jpa-2.7.2.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.7.2=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1660108701031"/>
     <typeInfo handle="=JpaGenerationType/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.jpagenerationtype.service{EmployeeService.java[EmployeeService" modifiers="513" timestamp="1660841847075"/>
     <typeInfo handle="=JpaGenerationType/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.jpagenerationtype.repo{EmployeeDemoRepo.java[EmployeeDemoRepo" modifiers="513" timestamp="1660842169040"/>
+    <typeInfo handle="=OnlineBookStore/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.book.services{AdminService.java[AdminService" modifiers="513" timestamp="1661242304615"/>
+    <typeInfo handle="=OnlineBookStore/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.book.services{BookService.java[BookService" modifiers="513" timestamp="1661162789698"/>
+    <typeInfo handle="=OnlineBookStore/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.book.services{UserService.java[UserService" modifiers="513" timestamp="1661319806756"/>
+    <typeInfo handle="=demojpa/C:\/Users\/gaurav.k.singh\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.7.2\/spring-data-jpa-2.7.2.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.7.2=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1660108701031"/>
+    <typeInfo handle="=OnlineBookStore/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.book.services{OrderService.java[OrderService" modifiers="513" timestamp="1661283075520"/>
 </typeInfoHistroy>
