@@ -129,9 +129,16 @@ public class UserServiceImpl implements UserService {
 		repoBook.setStatusForBook("SOLD", bookId);
 		
 		//sending mail
-		email.sendSimpleEmail("bamerendra@gmail.com",
+		email.sendSimpleEmail("bamerendra@gmail.com",           
 				"Order Placed Successfully",
 				"Order Placed");
+		
+		//to take the mail id by default
+//		 SignUp sign = signRepo.findByUserId(userId);
+//		 String emails = sign.getEmail();
+//		 email.sendSimpleEmail(emails,           
+//					"Order Placed Successfully",
+//					"Order Placed");
 		
 		return "ORDER PLACED SUCCESSFULLY";
 	}

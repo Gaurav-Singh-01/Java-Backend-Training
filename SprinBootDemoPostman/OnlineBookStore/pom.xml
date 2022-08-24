@@ -55,7 +55,16 @@
 			<version>2.7.3</version>
 		</dependency>
 		<!-- Mail dependency -->
-		
+
+
+		<!--Swagger Dependency Starts -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<!--Swagger Dependency Ends -->
+
 	</dependencies>
 
 	<build>

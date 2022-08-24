@@ -20,6 +20,8 @@ public interface SignUpRepo extends JpaRepository<SignUp, Integer> {
 //	@Query("Update signup set password =:newPassword where signup.id=:id")
 //	public boolean setForgetPassword(String newPassword, int id);
 	
+	public SignUp findByUserId(String userId);
+	
 	
 	@Modifying
 	@Transactional
