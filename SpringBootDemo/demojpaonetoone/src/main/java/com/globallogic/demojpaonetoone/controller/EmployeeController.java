@@ -3,6 +3,8 @@ package com.globallogic.demojpaonetoone.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.globallogic.demojpaonetoone.entity.DepartmentEntity;
 import com.globallogic.demojpaonetoone.entity.EmployeeEntity;
+import com.globallogic.demojpaonetoone.model.EmployeeModel;
 import com.globallogic.demojpaonetoone.repo.DepartmentRepo;
 import com.globallogic.demojpaonetoone.repo.EmployeeRepo;
 
@@ -36,6 +39,24 @@ public class EmployeeController {
 
 	}
 
+	@GetMapping("/demo")
+	public ResponseEntity<EmployeeModel> requestDemo() {
+
+		// return new ResponseEntity<String>("Hello World",HttpStatus.OK);
+		// return new ResponseEntity<String>("Hello World",HttpStatus.BAD_REQUEST);
+		// return new ResponseEntity<String>("Hello World",HttpStatus.NOT_FOUND);
+
+		// Integer res=10;
+		/*
+		 * List<String> ls=new ArrayList<String>(); ls.add("Ravinder"); ls.add("kumar");
+		 * ls.add("priya");
+		 */
+		EmployeeModel emp = new EmployeeModel(1001, "Ravinder", "Trainer");
+
+		return new ResponseEntity<EmployeeModel>(emp, HttpStatus.OK);
+
+	}
+
 	// POST request
 	// each time it will create a new data request
 	// will send the data with body
@@ -44,7 +65,8 @@ public class EmployeeController {
 
 		System.out.println("dept  " + e.getDept());
 
-		DepartmentEntity entity = repos.findById(e.getDept().getId()).get(); //changes from from line 45 to 52 in 2nd way
+		DepartmentEntity entity = repos.findById(e.getDept().getId()).get(); // changes from from line 45 to 52 in 2nd
+																				// way
 
 		System.err.println("dept id" + entity);
 

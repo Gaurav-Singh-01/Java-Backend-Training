@@ -11,3 +11,6 @@ public class DemojpaApplication {
 	}
 
 }
+
+
+//swagger run link  --->  http://localhost:8080/swagger-ui/index.html#/
