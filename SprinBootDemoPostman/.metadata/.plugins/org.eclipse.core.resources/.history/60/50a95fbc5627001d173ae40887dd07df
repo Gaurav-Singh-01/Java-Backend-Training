@@ -1,0 +1,75 @@
+package com.globallogic.examportal.entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="course")
+public class CourseEntity {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	long id;
+	
+	@Column
+	String course;
+	
+	@Column
+	String stream;
+	
+	@Column
+	String subject;
+
+	public CourseEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public CourseEntity(long id, String course, String stream, String subject) {
+		super();
+		this.id = id;
+		this.course = course;
+		Stream = stream;
+		this.subject = subject;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getCourse() {
+		return course;
+	}
+
+	public void setCourse(String course) {
+		this.course = course;
+	}
+
+	public String getStream() {
+		return Stream;
+	}
+
+	public void setStream(String stream) {
+		Stream = stream;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	@Override
+	public String toString() {
+		return "CourseEntity [id=" + id + ", course=" + course + ", Stream=" + Stream + ", subject=" + subject + "]";
+	}
+	
+	
+	
+
+}

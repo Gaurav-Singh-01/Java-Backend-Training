@@ -1,0 +1,5 @@
+package com.globallogic.examportal.repositories;
+
+public interface SubjectWiseMarksRepo {
+
+}

@@ -1,0 +1,5 @@
+package com.globallogic.examportal.services;
+
+public interface ExamService {
+
+}

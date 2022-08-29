@@ -1,0 +1,6 @@
+package com.globallogic.examportal.serviceImpl;
+
+@Service
+public class StaffSeviceImpl {
+
+}

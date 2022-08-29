@@ -1,0 +1,34 @@
+package com.globallogic.examportal.serviceImpl;
+
+import java.util.List;
+
+import com.globallogic.examportal.entity.Exam;
+import com.globallogic.examportal.services.ExamService;
+
+public class ExamServiceImpl implements ExamService {
+
+	@Override
+	public List<Exam> showDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Exam> addExam(Exam exam) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Exam> updateExam(Exam exam) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,77 @@
+package com.globallogic.examportal.entity;
+
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="course")
+public class Course {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	long id;
+	
+	@Column
+	String course;
+	
+	@Column
+	String branch;
+	
+	@OneToMany(cascade = CascadeType.PERSIST)
+	List<Subject> subject;
+
+	public Course() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Course(long id, String course, String branch, List<Subject> subject) {
+		super();
+		this.id = id;
+		this.course = course;
+		this.branch = branch;
+		this.subject = subject;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getCourse() {
+		return course;
+	}
+
+	public void setCourse(String course) {
+		this.course = course;
+	}
+
+	public String getbranch() {
+		return branch;
+	}
+
+	public void setbranch(String branch) {
+		this.branch = branch;
+	}
+
+	public List<Subject> getSubject() {
+		return subject;
+	}
+
+	public void setSubject(List<Subject> subject) {
+		this.subject = subject;
+	}
+
+	@Override
+	public String toString() {
+		return "CourseEntity [id=" + id + ", course=" + course + ", branch=" + branch + ", subject=" + subject + "]";
+	}
+	
+	
+	
+
+}

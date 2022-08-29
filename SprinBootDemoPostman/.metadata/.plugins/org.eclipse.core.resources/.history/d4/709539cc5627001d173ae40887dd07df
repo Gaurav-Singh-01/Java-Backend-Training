@@ -1,0 +1,5 @@
+package com.globallogic.examportal.entity;
+
+public class StaffEntity {
+
+}

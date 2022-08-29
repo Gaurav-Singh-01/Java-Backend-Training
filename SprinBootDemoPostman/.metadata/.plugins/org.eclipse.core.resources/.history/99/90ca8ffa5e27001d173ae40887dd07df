@@ -1,0 +1,14 @@
+package com.globallogic.examportal.entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "exam")
+public class Exam {
+	
+	
+	long id;
+	
+	
+
+}

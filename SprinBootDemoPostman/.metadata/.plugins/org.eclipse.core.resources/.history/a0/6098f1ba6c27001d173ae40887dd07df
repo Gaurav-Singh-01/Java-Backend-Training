@@ -1,0 +1,30 @@
+package com.globallogic.examportal.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.globallogic.examportal.entity.Student;
+
+@Service
+public interface StudentService {
+
+	// GET
+	public List<Student> showDetails();
+
+	// POST
+	public List<Student> addStudent(Student student);
+
+	// PUT
+	public List<Student> updateStudent(Student student);
+
+	// DELETE
+	public String delete(long id);
+
+	// GET
+	public List<String> viewSubjects(long id);
+
+	// GET
+	public List<String> viewExam(long id);
+
+}

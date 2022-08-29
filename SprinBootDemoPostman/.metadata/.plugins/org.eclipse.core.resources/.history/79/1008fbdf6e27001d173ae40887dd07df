@@ -1,0 +1,13 @@
+package com.globallogic.examportal.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.globallogic.examportal.entity.Exam;
+
+public interface ExamRepo extends JpaRepository<Exam, Long> {
+	
+	public List<Exam> findByBranch(String branch);
+
+}

@@ -1,0 +1,64 @@
+package com.globallogic.examportal.serviceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.globallogic.examportal.entity.Staff;
+import com.globallogic.examportal.repositories.StaffRepo;
+import com.globallogic.examportal.services.StaffService;
+
+@Service
+public class StaffSeviceImpl implements StaffService {
+		
+		@Autowired
+		StaffRepo staffRepo;
+
+		@Override
+		public List<Staff> showDetails() {
+			return staffRepo.findAll();
+		}
+
+		@Override
+		public String addStaffEntity(StaffEntity StaffEntity) {
+			String type = StaffEntity.getType();
+			String comment="";
+			if(type.equalsIgnoreCase("admin"))
+			{
+				comment = "Admin Registered Successfully";
+			}
+			else if(type.equalsIgnoreCase("user"))
+			{
+				comment = "User Registered Successfully";
+			}
+			signRepo.save(StaffEntity);
+			return comment;
+		}
+
+		@Override
+		public String updateStaffEntity(StaffEntity StaffEntity) {
+			String type = StaffEntity.getType();
+			String comment="";
+			if(type.equalsIgnoreCase("admin"))
+			{
+				comment = "Admin Updated Successfully";
+			}
+			else if(type.equalsIgnoreCase("user"))
+			{
+				comment = "User Updated Successfully";
+			}
+			signRepo.save(StaffEntity);
+			return comment;
+		}
+
+		@Override
+		public String delete(int id) {
+			signRepo.deleteById(id);
+			return "DATA DELETED SUCCESSFULLY";
+		}
+
+	}
+
+
+}

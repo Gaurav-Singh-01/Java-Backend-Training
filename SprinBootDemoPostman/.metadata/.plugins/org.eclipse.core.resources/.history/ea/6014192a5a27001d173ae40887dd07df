@@ -1,0 +1,24 @@
+package com.globallogic.examportal.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.globallogic.examportal.entity.Staff;
+
+@Service
+public interface StaffService {
+	
+	//GET
+		public List<Staff> showDetails();
+		
+		//POST
+		public String addStaffEntity(Staff StaffEntity);
+		
+		//PUT
+		public String updateStaffEntity(Staff StaffEntity);
+		
+		//DELETE
+		public String delete(int id);
+
+}

@@ -1,0 +1,43 @@
+package com.globallogic.examportal.serviceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.globallogic.examportal.entity.Exam;
+import com.globallogic.examportal.entity.Exam;
+import com.globallogic.examportal.repositories.ExamRepo;
+import com.globallogic.examportal.services.ExamService;
+
+public class ExamServiceImpl implements ExamService {
+
+	@Autowired
+	ExamRepo examRepo;
+
+	@Override
+	public List<Exam> showDetails() {
+		// TODO Auto-generated method stub
+		return ExamRepo.findAll();
+	}
+
+	@Override
+	public List<Exam> addExam(Exam Exam) {
+		ExamRepo.save(Exam);
+		return ExamRepo.findAll();
+	}
+
+	@Override
+	public List<Exam> updateExam(Exam Exam) {
+		ExamRepo.save(Exam);
+		return ExamRepo.findAll();
+	}
+
+	@Override
+	public String delete(long id) {
+		// TODO Auto-generated method stub
+		ExamRepo.deleteById(id);
+		;
+		return "Exam deleted successfully";
+	}
+
+}

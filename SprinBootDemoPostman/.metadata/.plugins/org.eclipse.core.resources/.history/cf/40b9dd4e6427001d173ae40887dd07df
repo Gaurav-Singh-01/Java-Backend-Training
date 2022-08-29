@@ -1,0 +1,34 @@
+package com.globallogic.examportal.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.globallogic.examportal.entity.Exam;
+import com.globallogic.examportal.entity.Student;
+import com.globallogic.examportal.services.ExamService;
+
+@RestController
+@RequestMapping("/staff")
+public class StaffController {
+
+	@Autowired
+	ExamService examService;
+
+	// 2. As Satff and admin able to add the admission of student
+	@PostMapping("/addStudent")
+	public List<Student> addStudent(@RequestBody Student student) {
+		return studentService.addStudent(student);
+	}
+
+	// 4. As Admin able to create a exam
+	@PostMapping("/createExam")
+	public List<Exam> addExam(@RequestBody Exam exam) {
+		return examService.addExam(exam);
+	}
+
+}

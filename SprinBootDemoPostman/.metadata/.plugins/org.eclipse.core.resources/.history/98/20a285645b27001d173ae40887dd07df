@@ -1,0 +1,45 @@
+package com.globallogic.examportal.serviceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.globallogic.examportal.entity.Staff;
+import com.globallogic.examportal.repositories.StaffRepo;
+import com.globallogic.examportal.services.StaffService;
+
+@Service
+public class StaffSeviceImpl implements StaffService {
+		
+		@Autowired
+		StaffRepo staffRepo;
+
+		@Override
+		public List<Staff> showDetails() {
+			return staffRepo.findAll();
+		}
+
+		@Override
+		public String delete(long id) {
+			staffRepo.deleteById((long) id);
+			return "DATA DELETED SUCCESSFULLY";
+		}
+
+		@Override
+		public String addStaffEntity(Staff staff) {
+			// TODO Auto-generated method stub
+			staffRepo.save(staff);
+			return null;
+		}
+
+		@Override
+		public String updateStaffEntity(Staff staff) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+	}
+
+
+}

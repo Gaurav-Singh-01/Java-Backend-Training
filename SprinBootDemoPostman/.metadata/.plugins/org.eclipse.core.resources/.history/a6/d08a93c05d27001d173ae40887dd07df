@@ -1,0 +1,22 @@
+package com.globallogic.examportal.entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "staff")
+public class Staff {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	long id;
+	
+	@Column
+	String name;
+	
+	@Column
+	String address;
+	
+	@Column
+	long phoneNo;
+
+}

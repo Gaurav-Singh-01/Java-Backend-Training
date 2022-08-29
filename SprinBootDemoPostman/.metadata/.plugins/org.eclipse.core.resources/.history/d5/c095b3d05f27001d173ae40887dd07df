@@ -1,0 +1,42 @@
+package com.globallogic.examportal.serviceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.globallogic.examportal.entity.Course;
+import com.globallogic.examportal.repositories.CourseRepo;
+import com.globallogic.examportal.services.CourseService;
+
+public class CourseServiceImpl implements CourseService {
+	
+	
+	@Autowired
+	CourseRepo courseRepo;
+
+	@Override
+	public List<Course> showDetails() {
+		// TODO Auto-generated method stub
+		return courseRepo.findAll();
+	}
+
+	@Override
+	public List<Course> addCourse(Course course) {
+		courseRepo.save(course);
+		return courseRepo.findAll();
+	}
+
+	@Override
+	public List<Course> updateCourse(Course course) {
+		courseRepo.save(course);
+		return courseRepo.findAll();
+	}
+
+	@Override
+	public String delete(long id) {
+		// TODO Auto-generated method stub
+		courseRepo.deleteById(id);;
+		return "Course deleted successfully";
+	}
+
+}

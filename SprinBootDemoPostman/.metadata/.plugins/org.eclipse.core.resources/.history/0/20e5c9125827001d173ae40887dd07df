@@ -1,0 +1,7 @@
+package com.globallogic.examportal.entity;
+
+@Entity
+@Table(name="subject_wise-marka")
+public class SubjectWiseResultEntity {
+
+}

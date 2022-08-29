@@ -1,0 +1,27 @@
+package com.globallogic.examportal.entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "subjectWiseMarks")
+public class SubjectWiseMarks {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	long id;
+
+	@Column
+	String Subject;
+
+	@Column
+	double marksObtained;
+
+	@Column
+	double maximumMarks;
+
+	@OneToOne
+	Student student;
+	
+	
+
+}

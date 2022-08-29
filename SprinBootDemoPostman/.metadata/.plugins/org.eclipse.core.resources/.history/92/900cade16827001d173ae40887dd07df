@@ -1,0 +1,9 @@
+package com.globallogic.examportal.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.globallogic.examportal.entity.Course;
+
+public interface CourseRepo extends JpaRepository<Course, Long> {
+
+}

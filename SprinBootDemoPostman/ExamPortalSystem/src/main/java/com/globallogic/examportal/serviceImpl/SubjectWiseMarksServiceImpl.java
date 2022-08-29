@@ -1,0 +1,53 @@
+package com.globallogic.examportal.serviceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.globallogic.examportal.entity.Student;
+import com.globallogic.examportal.entity.SubjectWiseMarks;
+import com.globallogic.examportal.entity.SubjectWiseMarks;
+import com.globallogic.examportal.repositories.StudentRepo;
+import com.globallogic.examportal.repositories.SubjectWiseMarksRepo;
+import com.globallogic.examportal.services.SubjectWiseMarksService;
+
+@Service
+public class SubjectWiseMarksServiceImpl implements SubjectWiseMarksService {
+
+	@Autowired
+	SubjectWiseMarksRepo subjectWiseMarksRepo;
+	
+	@Autowired
+	StudentRepo studentRepo;
+	
+	
+
+	@Override
+	public List<SubjectWiseMarks> showDetails() {
+		// TODO Auto-generated method stub
+		return subjectWiseMarksRepo.findAll();
+	}
+
+	@Override
+	public List<SubjectWiseMarks> addSubjectWiseMarks(SubjectWiseMarks subjectWiseMarks) {
+		Student student = studentRepo.findById(subjectWiseMarks.getStudent().getId()).get();
+		subjectWiseMarks.setStudent(student);
+		subjectWiseMarksRepo.save(subjectWiseMarks);
+		return subjectWiseMarksRepo.findAll();
+	}
+
+	@Override
+	public List<SubjectWiseMarks> updateSubjectWiseMarks(SubjectWiseMarks subjectWiseMarks) {
+		subjectWiseMarksRepo.save(subjectWiseMarks);
+		return subjectWiseMarksRepo.findAll();
+	}
+
+	@Override
+	public String delete(long id) {
+		// TODO Auto-generated method stub
+		subjectWiseMarksRepo.deleteById(id);
+		return "SubjectWiseMarks deleted successfully";
+	}
+
+}

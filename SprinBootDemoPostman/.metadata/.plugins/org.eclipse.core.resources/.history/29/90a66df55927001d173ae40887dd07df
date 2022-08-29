@@ -1,0 +1,25 @@
+package com.globallogic.examportal.entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "result")
+public class ResultEntity {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	long id;
+	
+	@Column
+	String student_Id;
+	
+	@Column
+	String studentName;
+	
+	@Column
+	double percentage;
+	
+	@Column
+	String status;
+
+}

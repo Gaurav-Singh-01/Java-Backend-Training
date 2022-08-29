@@ -1,0 +1,26 @@
+package com.globallogic.examportal.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.globallogic.examportal.entity.Staff;
+import com.globallogic.examportal.services.StaffService;
+
+@RestController
+@RequestMapping("/admin")
+public class AdminController {
+	
+	@Autowired
+	StaffService staffService;
+	
+	@PostMapping("/addStaff")
+	public List<Staff> addStaff(@RequestBody Staff staff){
+		return staffService.addStaffEntity(staff);
+	}
+
+}
