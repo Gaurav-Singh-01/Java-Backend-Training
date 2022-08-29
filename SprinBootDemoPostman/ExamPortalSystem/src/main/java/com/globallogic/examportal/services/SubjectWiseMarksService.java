@@ -1,6 +1,7 @@
 package com.globallogic.examportal.services;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,8 @@ public interface SubjectWiseMarksService {
 
 	// DELETE
 	public String delete(long id);
+	
+	//GET
+	public Map<String,Double> getSubjectWiseResult(long id);
 
 }

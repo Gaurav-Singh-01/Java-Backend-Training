@@ -4,15 +4,18 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.globallogic.examportal.entity.Exam;
+import com.globallogic.examportal.entity.Result;
 import com.globallogic.examportal.entity.Student;
 import com.globallogic.examportal.entity.SubjectWiseMarks;
 import com.globallogic.examportal.services.ExamService;
+import com.globallogic.examportal.services.ResultService;
 import com.globallogic.examportal.services.StudentService;
 import com.globallogic.examportal.services.SubjectWiseMarksService;
 
@@ -25,9 +28,12 @@ public class StaffController {
 
 	@Autowired
 	ExamService examService;
-	
+
 	@Autowired
 	SubjectWiseMarksService subjectWiseMarksService;
+
+	@Autowired
+	ResultService resultService;
 
 	// 2. As Satff and admin able to add the admission of student
 	@PostMapping("/addStudent")
@@ -51,6 +57,13 @@ public class StaffController {
 	@PostMapping("/addMarks")
 	public List<SubjectWiseMarks> addMarks(@RequestBody SubjectWiseMarks subjectWiseMarks) {
 		return subjectWiseMarksService.addSubjectWiseMarks(subjectWiseMarks);
+	}
+
+	// Add result of students
+	// 12. As Admin and Staff mark the student as fail if overall is less than 50%
+	@GetMapping("/addResult/studentid/{id}")
+	public List<Result> addResult(@PathVariable long id) {
+		return resultService.addResult(id);
 	}
 
 }

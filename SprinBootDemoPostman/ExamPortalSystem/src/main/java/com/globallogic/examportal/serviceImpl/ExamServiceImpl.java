@@ -46,4 +46,10 @@ public class ExamServiceImpl implements ExamService {
 		return "Exam deleted successfully";
 	}
 
+	@Override
+	public String attemptExam(long id) {
+		examRepo.setStatusForExam("Active",id);
+		return "ATTEMPTING EXAM";
+	}
+
 }

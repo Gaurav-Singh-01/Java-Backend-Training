@@ -1,0 +1,82 @@
+package com.globallogic.examportal.serviceImpl;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.globallogic.examportal.entity.Result;
+import com.globallogic.examportal.entity.Student;
+import com.globallogic.examportal.entity.SubjectWiseMarks;
+import com.globallogic.examportal.entity.Result;
+import com.globallogic.examportal.repositories.ResultRepo;
+import com.globallogic.examportal.repositories.StudentRepo;
+import com.globallogic.examportal.repositories.SubjectWiseMarksRepo;
+import com.globallogic.examportal.services.ResultService;
+
+@Service
+public class ResultServiceImpl implements ResultService {
+
+	@Autowired
+	ResultRepo resultRepo;
+	
+	@Autowired
+	StudentRepo studentRepo;
+
+	@Autowired
+	SubjectWiseMarksRepo subjectWiseMarksRepo;
+
+	@Override
+	public List<Result> showDetails() {
+		// TODO Auto-generated method stub
+		return resultRepo.findAll();
+	}
+
+	@Override
+	public List<Result> addResult(long id) {
+
+		List<SubjectWiseMarks> subjectWiseMarks = subjectWiseMarksRepo.findByStudentId(id);
+
+		double sum = 0;
+		double maxMarks = 0;
+		for (SubjectWiseMarks sb : subjectWiseMarks) {
+			sum = sum + sb.getMarksObtained();
+			maxMarks = maxMarks + sb.getMaximumMarks();
+		}
+
+		Result result = new Result();
+		double percent = (sum/maxMarks)*100;
+		result.setPercentage(percent);
+		if(percent > 50) {
+			result.setStatus("Pass");
+		}
+		else {
+			result.setStatus("Fail");
+		}
+		Student student = studentRepo.
+		result.setStudent(student);
+		resultRepo.save(result);
+		return resultRepo.findAll();
+	}
+
+	@Override
+	public List<Result> updateResult(Result result) {
+		resultRepo.save(result);
+		return resultRepo.findAll();
+	}
+
+	@Override
+	public String delete(long id) {
+		// TODO Auto-generated method stub
+		resultRepo.deleteById(id);
+		return "Result deleted successfully";
+	}
+
+//	@Override
+//	public List<Result> showResult(long id) {
+//		return ;
+//	}
+
+}

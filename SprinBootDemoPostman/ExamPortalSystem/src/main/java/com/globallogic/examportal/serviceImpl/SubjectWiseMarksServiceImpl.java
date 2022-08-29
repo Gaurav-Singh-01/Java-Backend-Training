@@ -1,6 +1,8 @@
 package com.globallogic.examportal.serviceImpl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,6 +50,22 @@ public class SubjectWiseMarksServiceImpl implements SubjectWiseMarksService {
 		// TODO Auto-generated method stub
 		subjectWiseMarksRepo.deleteById(id);
 		return "SubjectWiseMarks deleted successfully";
+	}
+
+	//SUBJECT WISE RESULT
+	@Override
+	public Map<String, Double> getSubjectWiseResult(long id) {
+		
+		
+		
+		List<SubjectWiseMarks> subjectWiseMarks = subjectWiseMarksRepo.findByStudentId(id);
+		
+		Map<String, Double> resultSubjectWise = new HashMap<>();
+		
+		for(SubjectWiseMarks sb : subjectWiseMarks) {
+			resultSubjectWise.put(sb.getSubject(),(sb.getMarksObtained()/sb.getMaximumMarks())*100);
+		}
+		return resultSubjectWise;
 	}
 
 }

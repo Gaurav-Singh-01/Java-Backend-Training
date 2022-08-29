@@ -27,9 +27,6 @@ public class Exam {
 	
 	@Column
 	String status;
-//
-//	@ManyToOne(cascade = CascadeType.PERSIST)
-//	Student student;
 	
 	
 	
@@ -44,7 +41,6 @@ public class Exam {
 
 
 	public Exam(long id, String course, String branch, String subject, int noOfQues, double duration, String status
-//			,Student student
 			) {
 		super();
 		this.id = id;
@@ -54,7 +50,6 @@ public class Exam {
 		this.noOfQues = noOfQues;
 		this.duration = duration;
 		this.status = status;
-//		this.student = student;
 	}
 
 
@@ -151,28 +146,10 @@ public class Exam {
 
 
 
-
-//	public Student getStudent() {
-//		return student;
-//	}
-//
-//
-//
-//
-//
-//	public void setStudent(Student student) {
-//		this.student = student;
-//	}
-
-
-
-
-
 	@Override
 	public String toString() {
 		return "Exam [id=" + id + ", course=" + course + ", branch=" + branch + ", subject=" + subject + ", noOfQues="
 				+ noOfQues + ", duration=" + duration + ", status=" + status + "]";
-		//, student=" + student + "
 	}
 
 

@@ -22,4 +22,7 @@ public interface ExamService {
 	// DELETE
 	public String delete(long id);
 
+	//GET
+	public String attemptExam(long id);
+
 }
